@@ -16,20 +16,23 @@ struct CustomDotIndicatorView: View {
             ForEach(0..<count, id:\.self) { tab in
                 Circle()
                     .fill(tab == selectedTab ? Color(UIColor(.white)) : Color(UIColor(.gray)))
-                    .scaleEffect(tab == selectedTab ? 1.0 : 1.0)
-                    .frame(width: 8, height: 8)
+                    .frame(width: 10, height: 10)
                     .padding(.horizontal, 4)
                     .onTapGesture {
+                        
+                        print("Select Tab: \(tab)")
                         selectedTab = tab
+                        
                     }
                     .onDrag({ /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Item Provider@*/NSItemProvider()/*@END_MENU_TOKEN@*/ })
             }
         }
         .animation(.easeOut, value: selectedTab)
+        
     }
 }
 
 //#Preview {
-//    @State var selectedTab = 0
-//    CustomDotIndicatorView(count: 5, selectedTab: $selectedTab)
+//    @State var selectedTabPrev = 0
+//    CustomDotIndicatorView(count: 5, selectedTab: $selectedTabPrev)
 //}

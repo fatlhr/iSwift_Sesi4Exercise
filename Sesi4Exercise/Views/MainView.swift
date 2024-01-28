@@ -29,13 +29,13 @@ struct MainView: View {
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
                 .animation(.easeIn, value: selectedTab)
+                .contentShape(Rectangle())
                 .ignoresSafeArea()
                 
                 CustomDotIndicatorView(count: tabs.count, selectedTab: $selectedTab)
                     .padding(.bottom, bottomPadding)
             }
         }
-        
         .ignoresSafeArea()
     }
 }

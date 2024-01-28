@@ -38,14 +38,17 @@ struct OnboardingView: View {
                         .foregroundStyle(.white)
                         .lineLimit(4, reservesSpace: true)
                         .truncationMode(.tail)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .frame(maxWidth: .infinity, alignment: .leading)              
                 }
+//                .frame(maxWidth: proxy.size.width)
                 .padding(.horizontal, 36.0)
                 
-            }.ignoresSafeArea()
+            }
+            .ignoresSafeArea()
             
             
-        }.ignoresSafeArea()
+        }
+        .ignoresSafeArea()
         
     }
 }
